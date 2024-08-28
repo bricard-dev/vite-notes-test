@@ -12,9 +12,9 @@ function App() {
   }
 
   return (
-    <>
+    <div className="min-h-screen flex bg-slate-800">
       <NotesList />
-    </>
+    </div>
   );
 }
 
