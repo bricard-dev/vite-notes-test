@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NotesList from './components/NotesList';
 import Sidebar from './components/Sidebar';
 import SideNotes from './components/SideNotes';
@@ -14,9 +15,14 @@ function App() {
 
   return (
     <div className="min-h-screen flex bg-slate-800">
-      <Sidebar />
-      <SideNotes />
-      <NotesList />
+      <BrowserRouter>
+        <Sidebar />
+        <SideNotes />
+
+        <Routes>
+          <Route path="/" element={<NotesList />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
