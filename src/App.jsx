@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import NotesList from './components/NotesList';
+import Sidebar from './components/Sidebar';
 import { getNotesFromAPI } from './features/notes';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex bg-slate-800">
+      <Sidebar />
       <NotesList />
     </div>
   );
