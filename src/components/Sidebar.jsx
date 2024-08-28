@@ -17,7 +17,7 @@ export default function Sidebar() {
           alt="Voir toutes les notes"
         />
       </Link>
-      <Link to="/edit">
+      <Link to="/editer">
         <img className="h-10 w-10 mb-10" src={edit} alt="Écrire une notes" />
       </Link>
     </aside>

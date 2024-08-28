@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import DisplayedNote from './components/DisplayedNote';
 import NotesList from './components/NotesList';
 import Sidebar from './components/Sidebar';
 import SideNotes from './components/SideNotes';
@@ -21,6 +22,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<NotesList />} />
+          <Route path="/note/:id" element={<DisplayedNote />} />
         </Routes>
       </BrowserRouter>
     </div>
