@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, redirect, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { deleteNote } from '../features/notes';
 
 export default function DisplayedNote() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
   const notes = useSelector((state) => state.notes);
   const actualNote = notes.list?.find((note) => note.id === id);
@@ -24,8 +26,8 @@ export default function DisplayedNote() {
       <button
         onClick={() => {
           console.log('redirect');
-
-          return redirect('/');
+          dispatch(deleteNote(actualNote.id));
+          navigate('/');
         }}
         className="px-2 py-1 text-slate-200 bg-red-600 rounded mr-2"
       >
